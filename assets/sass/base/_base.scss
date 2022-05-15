@@ -3,11 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    font-size: 10px; //1rem =10px in bootstrap 1rem = 16 px
+}
 body{
     font-family: "lato", sans-serif;
     font-weight : 400;
-    font-size : 16px;
+    font-size : 1.6rem;
     line-height : 1.7;
     color : $color-grey-dark;
-    padding : 30px;
+    padding : 3rem;
 }
