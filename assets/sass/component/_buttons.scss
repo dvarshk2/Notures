@@ -17,7 +17,7 @@
         color: $color-grey-dark;        
     }
     &:hover{
-        transform: translateY(-13px); 
+        transform: translateY(-3px); 
         box-shadow: 0 10px 20px rgba($color-dark,0.2);
         &::before{
             // .btn:hover::before
@@ -41,6 +41,5 @@
         border-radius: 100px;
         z-index: -1;
         transition: all 0.4s ease-in-out;
-    }
-    
+    }  
 }
