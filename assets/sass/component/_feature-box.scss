@@ -1,0 +1,14 @@
+.section-features{
+    padding: 20rem 0;
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../images/nat-4.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.feature-box{
+    background-color: rgba($color-white, 0.8);
+    font-size: 1.6rem;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 1.5rem 4rem rgba($color-dark, 0.15);
+}

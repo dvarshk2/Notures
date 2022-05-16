@@ -3,12 +3,14 @@
     margin: 0 auto;
 }
 .row{
+    @include clearFix;
     &::before, &::after{
         @include clearFix;
     }
 }
 div[class^='col']{
     float: left;
+    padding: 0 1.5rem;
 }
 .col12{
     width: 100%;
