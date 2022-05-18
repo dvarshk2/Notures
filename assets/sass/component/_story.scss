@@ -1,0 +1,54 @@
+.story{
+    width: 75%;
+    margin: 0 auto;
+    background-color: rgba($color-white, 0.6);
+    padding: 6rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 3rem 6rem rgba($color-dark, 0.15);
+    transform: skewX(-12deg);
+    -webkit-transform: skewX(-12deg);
+    position: relative;
+    >*{
+        transform: skewX(12deg);
+    }
+    &-shape{
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        shape-outside: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        margin-right: 4rem;
+        overflow: hidden;
+    }
+    &-img{
+        height: 100%;
+        transform: translateX(-3rem) scale(1.4);
+        -webkit-transform: translateX(-3rem) scale(1.4);
+        transition: all 0.5s ease-in-out;
+    }
+    &-caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,120%);
+        -webkit-transform: translate(-50%,120%);
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        color: $color-white;
+        text-align: center;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        backface-visibility: hidden;
+    }
+    &:hover &-caption{
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    &:hover &-img{
+        transform: translateX(-3rem) scale(1);
+        -webkit-transform: translateX(-3rem) scale(1);
+        filter: blur(0.3rem) brightness(80%);
+    }
+}
