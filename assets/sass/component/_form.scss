@@ -1,0 +1,79 @@
+.form{
+    &-group{
+        &:not(:last-child){
+            margin-bottom: 2rem;
+        } 
+    } 
+    &-control{
+        width: 90%;
+        display: block;
+        color: inherit;
+        padding: 1.5rem 2rem;
+        font-family: inherit;
+        border-radius: 0.2rem;
+        border: none;
+        border-bottom: 0.3rem solid transparent;
+        transition: all 0.2s ease-in-out;
+        &:focus{
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-dark, 0.1);
+            border-bottom: .3rem solid $color-primary;
+        }
+        &:focus:invalid{
+            border-bottom: 0.3rem solid $color-secondary-dark;
+        }
+        &::placeholder{
+            color: $color-grey-light-2;
+        }
+        &::-webkit-input-placeholder{
+            color: $color-grey-light-2;
+        }
+       
+    }
+    &-label{
+        font-size: 1.2rem;
+        font-weight: 700;
+        display: block;
+        margin: 0.7rem 0 0 2rem;
+        transition: all .3s;
+    }
+    &-control:placeholder-shown + &-label{
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+    &-radio-group{
+        width: 49%;
+        display: inline-block;
+    } 
+    &-radio-control{
+        display: none;
+    }
+    &-radio-label{
+        font-size: 1.6rem;
+        padding-left: 4.5rem;
+        cursor: pointer;
+        position: relative;
+    }   
+    &-radio-btn{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        display: inline-block;
+        border: 5px solid $color-primary;
+        position: absolute;
+        top: -4px;
+        left: 0;
+        &::after{
+            content: "";
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            @include toCenter;
+            background-color: $color-primary;
+            opacity: 0;
+        }
+    }
+    &-radio-control:checked ~ &-radio-label &-radio-btn::after{
+        opacity: 1;
+    }
+}

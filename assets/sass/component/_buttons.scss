@@ -1,6 +1,7 @@
 .btn{
     &:link,
-    &:visited{
+    &:visited,
+    &{
         padding: 1.5rem 4rem;
         text-decoration: none;
         display: inline-block;
