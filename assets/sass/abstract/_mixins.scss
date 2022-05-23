@@ -9,3 +9,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+@mixin backgroundClip {
+    background-image: linear-gradient(to right, $color-primary-light,$color-primary-dark);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}

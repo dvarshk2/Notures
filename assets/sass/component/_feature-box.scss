@@ -11,10 +11,11 @@
         font-size: 6rem;
         margin-bottom: 0.5rem;
         display: inline-block;
-        background-image: linear-gradient(to right, $color-primary-light,$color-primary-dark);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+        // background-image: linear-gradient(to right, $color-primary-light,$color-primary-dark);
+        // -webkit-background-clip: text;
+        // background-clip: text;
+        // color: transparent;
+        @include backgroundClip;
     }
     &:hover{
         transform: translateY(-1.5rem) scale(1.05);

@@ -1,0 +1,115 @@
+.navigation{
+    &-toggle{
+        background-color: $color-white;
+        height: 7rem;
+        width: 7rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 4rem;
+        right: 4rem;
+        z-index: 100;
+        box-shadow: 0 1rem 3rem rgba($color-dark,.1);
+        cursor: pointer;
+        text-align: center;
+    }
+    &-icon{
+        background-color: $color-grey-dark1;
+        height: 0.2rem;
+        width: 3rem;
+        display: inline-block;      //inline element
+        margin-top: calc((7rem - 0.2rem) / 2);
+        position: relative;
+        &::before, &::after{
+            content: "";
+            height: 2px;
+            width: 3rem;
+            background-color: $color-grey-dark1;
+            position: absolute;
+            left: 0;
+        transition: all 0.3s;
+
+        }
+        &::before{
+            top: -0.8rem;
+        }
+        &::after{
+            top: 0.8rem;
+        }
+    }
+    &-background{
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        background-image: linear-gradient($color-primary-light, $color-primary-dark);
+        position: fixed;
+        top: 4.5rem;
+        right: 4.5rem;
+        z-index: 10;
+        transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+    }
+    &-nav{
+        position: fixed;
+        top: 0;
+        left: -100;
+        width: 0;
+        height: 100vh;
+        text-align: center;
+        z-index: 80;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: all 0.8s cubic-bezier(0.68,-0.55,0.25,1.5);
+    }
+    &-list{
+        list-style: none;
+    }
+    &-item{
+        margin: 1rem;
+    }
+    &-link{
+        &:link, &:visited{
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 3rem;
+            font-weight: 300;
+            color: $color-white;
+            padding: 1rem 2rem;
+            background-image: linear-gradient(135deg, transparent 0%, transparent 50%, $color-white 50%);
+            background-size: 250%;
+            transition: all 0.4s;
+            span{
+                display: inline-block;
+                margin-right: 1.5rem;
+            }
+        }
+        &:hover, &:focus &:active{
+            background-position: 100%;
+            color: $color-primary;
+            font-weight: 700;
+            transform: translateX(1rem);
+        }
+    }
+    &.active{
+        .navigation-background{
+            transform: scale(50);
+        }
+        .navigation-nav{
+            left: 0;
+            width: 100vw;
+            opacity: 1;
+        }
+        .navigation-icon{
+            background-color: transparent;
+            &::before{
+                top: 0;
+                transform: rotate(135deg);
+            }
+            &::after{
+                top: 0;
+                transform: rotate(-135deg);
+            }
+        }
+    }
+}
