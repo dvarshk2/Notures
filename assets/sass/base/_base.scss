@@ -4,7 +4,28 @@
     box-sizing: border-box;
 }
 html{
-    font-size: 10px; //1rem =10px in bootstrap 1rem = 16 px
+    // font-size: 10px; //1rem =10px in bootstrap 1rem = 16 px 16>>10 ? 100  ?
+    font-size: 62.5%; // converted 10 px into %
+
+    // Hardcoded code
+    // @include response-phone{
+    //     font-size: 50%;
+    // }
+    // @media (max-width:600px) {
+    //     font-size: 40%;
+    // }
+    @include response(tabLand){ //max-width >>1200px
+        font-size: 56.25%;  //1rem = 9px >> 9/16=56.25%
+    }
+    @include response(tabPort){  //max-width >>900px
+        font-size: 50%;     //1rem = 8px >> 8/16= 50%
+    }
+    @include response(phone){ //max-width >>600px
+        font-size: 50%;         //
+    }
+    @include response(bigScreen){
+        font-size: 75%;         // 1rem = 12px  12/16>>0.75
+    }
 }
 body{
     font-family: "lato", sans-serif;
@@ -13,4 +34,7 @@ body{
     line-height : 1.7;
     color : $color-grey-dark;
     padding : 3rem;
+    @include response(tabPort){
+        padding: 0;
+    }
 }

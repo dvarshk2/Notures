@@ -10,6 +10,12 @@
     @include backgroundClip;
     transition: all 0.2s ease-in-out;
     letter-spacing: 0.2rem;
+    @include response(tabPort){
+        font-size: 2.5rem; 
+    }
+    @include response(phone){
+        font-size: 2rem;
+    }
     &:hover{
         // transform: skewY(2deg) skewX(15deg) scale(1.1);
         transform: scale(1.1);

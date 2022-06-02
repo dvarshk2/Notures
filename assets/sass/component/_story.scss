@@ -8,8 +8,18 @@
     transform: skewX(-12deg);
     -webkit-transform: skewX(-12deg);
     position: relative;
+    @include response(phone){
+        transform: skewX(0deg);
+        -webkit-transform: skewX(0deg);
+        padding: 2rem;
+        width: 100%;
+    }
     >*{
         transform: skewX(12deg);
+        @include response(phone){
+            transform: skewX(0deg);
+            -webkit-transform: skewX(0deg);
+        }
     }
     &-shape{
         width: 15rem;
@@ -19,6 +29,10 @@
         clip-path: circle(50% at 50% 50%);
         margin-right: 4rem;
         overflow: hidden;
+        @include response(phone){
+            margin: 0 auto 1rem;
+            float: none;
+        }
     }
     &-img{
         height: 100%;
@@ -50,5 +64,15 @@
         transform: translateX(-3rem) scale(1);
         -webkit-transform: translateX(-3rem) scale(1);
         filter: blur(0.3rem) brightness(80%);
+    }
+    &-details{
+        @include response(phone){
+            text-align: center;
+        }
+        p{
+            @include response(phone){
+                text-align: justify;
+            }
+        }
     }
 }

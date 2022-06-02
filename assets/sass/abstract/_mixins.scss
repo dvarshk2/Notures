@@ -16,3 +16,48 @@
     background-clip: text;
     color: transparent;
 }
+
+/*
+0 to 600px >> mobile phone
+600 to 900px >> tab portrait
+900 to 1200px >> tab landscape
+1200 to 1800px >> desktop normal css will apply
+screen > 1800px >> big screens
+*/
+// ORDER >> base + typography >> layout + grids >> page layout > components
+/*
+Breakpoints
+-phone 
+-tabPort
+-tabLand
+-bigScreens
+*/
+
+@mixin response-phone {
+    @media (max-width:600px){
+        @content;
+    }
+}
+
+@mixin response($breakpoint) {
+    @if $breakpoint == phone{
+        @media (max-width:37.5em){
+            @content; //decorate
+        }
+    }
+    @if $breakpoint == tabPort{
+        @media (max-width:56.25em){
+            @content;
+        }
+    }
+    @if $breakpoint == tabLand{
+        @media (max-width:75em){
+            @content;
+        }
+    }
+    @if $breakpoint == bigScreen{
+        @media (min-width:112.5em){
+            @content;
+        }
+    }
+}

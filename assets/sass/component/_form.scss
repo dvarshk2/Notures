@@ -14,6 +14,9 @@
         border: none;
         border-bottom: 0.3rem solid transparent;
         transition: all 0.2s ease-in-out;
+        @include response(phone){
+            width: 100%;
+        }
         &:focus{
             outline: none;
             box-shadow: 0 1rem 2rem rgba($color-dark, 0.1);
@@ -44,6 +47,12 @@
     &-radio-group{
         width: 49%;
         display: inline-block;
+        @include response(phone){
+            width: 100%;
+            &:not(:last-child){
+                margin-bottom: 2rem;
+            }
+        }
     } 
     &-radio-control{
         display: none;
