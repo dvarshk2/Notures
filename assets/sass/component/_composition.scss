@@ -11,6 +11,9 @@
         transition: all 0.2s ease-in-out;
         z-index: 10;
         outline-offset: 2rem;
+        @include response(phone){
+            outline-offset: 1rem;
+        }
         &-1{
             left: 0;
             top: -2rem; 

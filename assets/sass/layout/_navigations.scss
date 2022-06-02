@@ -11,6 +11,9 @@
         box-shadow: 0 1rem 3rem rgba($color-dark,.1);
         cursor: pointer;
         text-align: center;
+        @include response(phone){
+            right: 1rem;
+        }
     }
     &-icon{
         background-color: $color-grey-dark1;
@@ -33,7 +36,7 @@
             top: -0.8rem;
         }
         &::after{
-            top: 0.8rem;
+            top: 0.8rem;  
         }
     }
     &-background{
@@ -46,6 +49,9 @@
         right: 4.5rem;
         z-index: 20;
         transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+        @include response(phone){
+            right: 1.5rem;
+        }
     }
     &-nav{
         position: fixed;
